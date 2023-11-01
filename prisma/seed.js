@@ -1,7 +1,7 @@
 const prisma = require("../prisma");
 
 // Seed 20 authors into the database. Each author should have 3 corresponding books.
-const seed async (singleAuthors = 20, booksPerAuthor = 3) => { // because we use async we need an await at the end
+const seed = async (singleAuthors = 20, booksPerAuthor = 3) => { // because we use async we need an await at the end
     //.from() creates an array from an array-like object (looks like a double loop)
     const createAuthorPromises = Array.from({ length: singleAuthors }, (_, index) => {
         const books = Array.from({ length: booksPerAuthor }, (_, jindex) => ({
